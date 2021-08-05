@@ -93,7 +93,7 @@
         try {
           await navigator.share(shareData)
           localStorage.setItem('number-of-shares',numberOfShares)
-          resultPara.textContent = `shared ${numberOfShares} times.Sharee as much as you can to win`
+          resultPara.textContent = `shared ${numberOfShares} times.Share as much as you can to win`
         } catch(err) {
           resultPara.textContent = 'Error: ' + err
         }
