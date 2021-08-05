@@ -81,17 +81,19 @@
         const shareData = {
         title: 'MDN',
         text: 'Hi just answer 5 questions you may get a chance to win Rs 100 !. I had tried it its very easy',
-        url: 'https://developer.mozilla.org',
+        url: 'https://amazing-almeida-8b7fe4.netlify.app/'
       }
       
       const btn = document.querySelector('#sharebtn');
       const resultPara = document.querySelector('.shareinfo');
+      let numberOfShares = 0;
       
       // Must be triggered some kind of "user activation"
       btn.addEventListener('click', async () => {
         try {
           await navigator.share(shareData)
-          resultPara.textContent = 'shared successfully'
+          localStorage.setItem('number-of-shares',numberOfShares)
+          resultPara.textContent = `shared ${numberOfShares} times.Sahre as much as you can to win`
         } catch(err) {
           resultPara.textContent = 'Error: ' + err
         }
