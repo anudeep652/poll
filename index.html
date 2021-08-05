@@ -92,6 +92,7 @@
       btn.addEventListener('click', async () => {
         try {
           await navigator.share(shareData)
+           numberOfShares++;
           localStorage.setItem('number-of-shares',numberOfShares)
           resultPara.textContent = `shared ${numberOfShares} times.Share as much as you can to win`
         } catch(err) {
